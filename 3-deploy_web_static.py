@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-'''fcreates and distributes an archive to your web servers, using deploy():
+'''
+Creates and distributes an archive to web servers, using the function deploy():
+
 '''
 
 import os
@@ -7,7 +9,7 @@ from datetime import datetime
 from fabric.api import env, local, put, run, runs_once
 
 
-env.hosts = ['34.138.32.248', '3.226.74.205']
+env.hosts = ['34.207.156.255', '100.25.179.158']
 
 
 @runs_once
@@ -62,7 +64,8 @@ def do_deploy(archive_path):
 
 
 def deploy():
-    """Archives and deploys the static files to the host servers.
+    """
+	Archives and deploys the static files to the host servers.
     """
     archive_path = do_pack()
     return do_deploy(archive_path) if archive_path else False
