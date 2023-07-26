@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Start Flask Web App """
+""" Starts Flask web application"""
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -18,8 +18,8 @@ def hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def show_text(text):
-    """return text passed to c/<text>"""
-    formatted_text = text.replace('_', " ")
+    """returns text that is passed to c/<text>"""
+    formatted_text = text.replace('_', ' ')
     response = "C {}".format(formatted_text)
     return response
 
@@ -44,4 +44,4 @@ def template(n):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0, port=5000)
+    app.run(host='0.0.0.0', port=5000)
